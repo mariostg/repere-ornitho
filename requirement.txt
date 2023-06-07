@@ -4,3 +4,5 @@ django-extensions==3.2.3
 django-sass-processor==1.2.2
 libsass==0.22.0
 sqlparse==0.4.4
+pandas==2.0.2
+django-environ==0.10.0
