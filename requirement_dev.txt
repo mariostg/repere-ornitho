@@ -1,0 +1,3 @@
+-e requirement.txt
+
+ipython==8.14.0

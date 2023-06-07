@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+
+<main class="block block--centered">
+    <section class="form" id="filter-form">
+        <form action="{% url 'search-species' %}" method="GET">
+            <div class="form__header">Rechercher espèce </div>
+            <section class="form__fields_flex">
+                <div class="form__row">
+                    <div class="form__field">
+                        <label for="search_term" class="label">nom d'espèce</label>
+                        <input type="text" name='search_term' value="{{initial.search_term}}">
+                    </div>
+                </div>
+            </section>
+        </form>
+    </section> 
+    <section>
+        <p></p>
+        {% include 'core/paginator.html' %}
+        {% if not data %}
+        <div>No lines associated to cost center</div>
+        {% endif %}
+
+        <h3 class='header'>Nom d'espèces contenant <u>{{initial.search_term}}</u> </h3>
+        <div class='block block--centered c3'>
+            <span>Nom français </span>
+            <span>Nom anglais</span>
+            <span>Nom espagnol</span>
+        </div>
+        {% for item in data %}
+        <div class='container c3'>
+            <span>{{item.comNameFr}} </span>
+            <span> {{item.comNameEn}} </span>
+            <span> {{item.comNameEs}} </span>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+{% endblock content %}
+
+
