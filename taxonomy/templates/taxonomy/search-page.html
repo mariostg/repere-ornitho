@@ -30,13 +30,15 @@
             <span>Nom anglais</span>
             <span>Nom espagnol</span>
         </div>
-        {% for item in data %}
-        <div class='container c3'>
-            <span>{{item.comNameFr}} </span>
-            <span> {{item.comNameEn}} </span>
-            <span> {{item.comNameEs}} </span>
+        <div class="species">
+            {% for item in data %}
+            <div class='species_name c3'>
+                <span>{{item.comNameFr}} </span>
+                <span> {{item.comNameEn}} </span>
+                <span> {{item.comNameEs}} </span>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </section>
 </main>
 {% endblock content %}

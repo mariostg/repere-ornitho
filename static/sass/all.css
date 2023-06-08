@@ -463,6 +463,19 @@ aside {
   text-align: right;
   font-size: 1rem; }
 
+.species_name {
+  display: grid;
+  justify-content: center; }
+
+@media (max-width: 650px) {
+  .species .species_name {
+    display: flex;
+    flex-direction: column; }
+  .species div:nth-child(odd) {
+    background-color: #eaccae; }
+  .species div:nth-child(even) {
+    background-color: #faf2eb; } }
+
 @use "../base/colors" as *;
 table {
   font-size: 1.8rem;

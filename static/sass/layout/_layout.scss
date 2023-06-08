@@ -110,3 +110,22 @@ aside {
     text-align: right;
     font-size: $size-small;
 }
+.species_name {
+    display: grid;
+    justify-content: center;
+}
+
+.species {
+    @include respond-small {
+        .species_name {
+            display: flex;
+            flex-direction: column;
+        }
+        & div:nth-child(odd) {
+            background-color: $color-theme-row-odd;
+        }
+        & div:nth-child(even) {
+            background-color: $color-theme-row-even;
+        }
+    }
+}
