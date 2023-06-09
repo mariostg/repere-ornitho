@@ -37,14 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_extensions",
     "django.forms",
     "sass_processor",
-    "geographie",
-    "habitat",
-    "siteornitho",
-    "users",
-    "phone_field",  # https://pypi.org/project/django-phone-field/
-    #'debug_toolbar'
+    # apps
+    "home",
+    "taxonomy",
+    "sites",
 ]
 
 MIDDLEWARE = [
