@@ -113,18 +113,31 @@ aside {
 .species_name {
     display: grid;
     justify-content: center;
-}
 
+    &:hover {
+        cursor: pointer;
+    }
+}
+.species_detail {
+    padding-left: 25px;
+    background-color: $color-theme-background;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+
+    @include respond-small {
+        padding-left: 0;
+    }
+}
 .species {
     @include respond-small {
         .species_name {
             display: flex;
             flex-direction: column;
         }
-        & div:nth-child(odd) {
+        .species_name:nth-child(4n + 1) {
             background-color: $color-theme-row-odd;
         }
-        & div:nth-child(even) {
+        & .species_name:nth-child(4n + 3) {
             background-color: $color-theme-row-even;
         }
     }

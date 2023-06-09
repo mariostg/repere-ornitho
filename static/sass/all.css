@@ -466,14 +466,24 @@ aside {
 .species_name {
   display: grid;
   justify-content: center; }
+  .species_name:hover {
+    cursor: pointer; }
 
+.species_detail {
+  padding-left: 25px;
+  background-color: #a5b9d2;
+  display: none;
+  grid-template-columns: 1fr 1fr; }
+  @media (max-width: 650px) {
+    .species_detail {
+      padding-left: 0; } }
 @media (max-width: 650px) {
   .species .species_name {
     display: flex;
     flex-direction: column; }
-  .species div:nth-child(odd) {
+  .species .species_name:nth-child(4n + 1) {
     background-color: #eaccae; }
-  .species div:nth-child(even) {
+  .species .species_name:nth-child(4n + 3) {
     background-color: #faf2eb; } }
 
 @use "../base/colors" as *;
