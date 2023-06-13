@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from sites.models import Site
 
 
 def sites_favoris(request):
-    return render(request, "sites/favoris.html")
+    data = Site.objects.all()
+    print(data)
+    return render(request, "sites/favoris.html", context={"data": data})
