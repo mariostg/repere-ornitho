@@ -39,7 +39,7 @@
             </div>
             <div class="species_detail">
                 <span>Code d'espèce</span><span> {{item.speciesCode}}</span>
-                <span>ordre</span><span> {{item.order}}</span>
+                <span>ordre</span><span> <a href="{% url 'order' item.order%}">{{item.order}}</a> </span>
                 <span>Nom de famille commun</span><span> {{item.familyComName}}</span>
                 <span>Nom de famille scientifique</span><span> {{item.familySciName}}</span>
             </div>

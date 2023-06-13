@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from taxonomy.forms import SearchSpeciesForm
 from utils import search
+from taxonomy.models import Taxonomy
 
 
 def search_species(request):
@@ -14,5 +15,15 @@ def search_species(request):
         "form": form,
         "initial": initial,
         "query_string": query_string,
+    }
+    return render(request, "taxonomy/search-page.html", context)
+
+
+def order(request, order):
+    data = Taxonomy.objects.all().filter(order=order)
+    paginator = Paginator(data, 25)
+    page_number = request.GET.get("page")
+    context = {
+        "data": paginator.get_page(page_number),
     }
     return render(request, "taxonomy/search-page.html", context)
