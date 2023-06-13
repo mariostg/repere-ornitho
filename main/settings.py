@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.forms",
     "sass_processor",
     # apps
+    "geographie",
     "home",
     "taxonomy",
     "sites",

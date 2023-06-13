@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "sass_processor",
     # apps
     "home",
+    "geographie",
     "taxonomy",
     "sites",
 ]
