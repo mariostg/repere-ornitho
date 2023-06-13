@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             model_name="site",
             name="municipalite",
             field=models.ForeignKey(
-                default=django.utils.timezone.now,
+                default=1,
                 on_delete=django.db.models.deletion.RESTRICT,
                 to="geographie.municipalite",
             ),
