@@ -27,3 +27,13 @@ def order(request, order):
         "data": paginator.get_page(page_number),
     }
     return render(request, "taxonomy/search-page.html", context)
+
+
+def famille_sci(request, familySciName):
+    data = Taxonomy.objects.all().filter(familySciName=familySciName)
+    paginator = Paginator(data, 25)
+    page_number = request.GET.get("page")
+    context = {
+        "data": paginator.get_page(page_number),
+    }
+    return render(request, "taxonomy/search-page.html", context)
