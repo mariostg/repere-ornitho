@@ -7,9 +7,9 @@
     <h2 class='header'>Sites favoris</h2>
 </main>
 
-<div class="sites">
+<div class="site-list">
     {% for item in data %}
-    <div>
+    <div class='site-detail'>
         <span>{{item.site_name}}</span>
         <span><a target="_blank" href="https://ebird.org/hotspot/{{item.loc_id}}">{{item.loc_id}}</a></span>
         <span>{{item.municipalite}}</span>
