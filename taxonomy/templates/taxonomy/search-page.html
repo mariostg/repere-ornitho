@@ -4,7 +4,7 @@
 {% block content %}
 
 <main class="container">
-    <section class="form" id="filter-form">
+    <section class="w-75 m-auto py-4" id="filter-form">
         <form action="{% url 'search-species' %}" method="GET">
             <div class="bg-secondary rounded-top-4 p-2 mt-2">Rechercher espèce </div>
                 <input class='form-control rounded-bottom-4' type="text" name='search_term' value="{{initial.search_term}}">
@@ -12,17 +12,16 @@
         </form>
     </section> 
     <section>
-        <p></p>
         {% include 'core/paginator.html' %}
         {% if not data %}
         <div>No lines associated to cost center</div>
         {% endif %}
 
         <h3 class='container bg-primary text-secondary text-center'>Nom d'espèces contenant <u>{{initial.search_term}}</u> </h3>
-        <div class='block block--centered c3'>
-            <span>Nom français </span>
-            <span>Nom anglais</span>
-            <span>Nom espagnol</span>
+        <div class='row bg-secondary m-0'>
+            <span class='col'>Nom français </span>
+            <span class='col'>Nom anglais</span>
+            <span class='col'>Nom espagnol</span>
         </div>
         <div class="species">
             {% for item in data %}
