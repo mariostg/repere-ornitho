@@ -8,11 +8,35 @@
 </main>
 
 <div class="site-list">
+    {% for m in munic %}
+        <h3>{{m.name}}</h3>
+
+        {% for item in data %}
+            {% if m.name == item.municipalite %}
+
+                <div class='site-detail'>
+                    <span>{{item.municipalite}}</span>
+                    <span>{{item.site_name}}</span>
+                    <span><a target="_blank" href="https://ebird.org/hotspot/{{item.loc_id}}">{{item.loc_id}}</a></span>
+                </div>
+
+            {%else%}
+
+                <p>{{m.name}} - {{item.municipalite}}</p>
+
+            {% endif %}
+        {% endfor %}
+
+
+    {% endfor %}
+
+
+
     {% for item in data %}
     <div class='site-detail'>
+        <span>{{item.municipalite}}</span>
         <span>{{item.site_name}}</span>
         <span><a target="_blank" href="https://ebird.org/hotspot/{{item.loc_id}}">{{item.loc_id}}</a></span>
-        <span>{{item.municipalite}}</span>
     </div>
     {% endfor %}
     
