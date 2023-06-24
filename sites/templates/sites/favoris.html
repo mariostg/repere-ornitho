@@ -3,42 +3,36 @@
 
 {% block content %}
 
-<main class="panel">
+<main class="container text-center">
     <h2 class='header'>Sites favoris</h2>
 </main>
 
-<div class="site-list">
+<div class="site-list container">
     {% for m in munic %}
-        <h3>{{m.name}}</h3>
+        <h3 class='bg-secondary-subtle'>{{m.name}}</h3>
 
         {% for item in data %}
             {% if m.name == item.municipalite %}
-
                 <div class='site-detail'>
                     <span>{{item.municipalite}}</span>
                     <span>{{item.site_name}}</span>
                     <span><a target="_blank" href="https://ebird.org/hotspot/{{item.loc_id}}">{{item.loc_id}}</a></span>
                 </div>
-
             {%else%}
-
                 <p>{{m.name}} - {{item.municipalite}}</p>
-
             {% endif %}
         {% endfor %}
 
 
     {% endfor %}
 
-
-
-    {% for item in data %}
+    {% comment %} {% for item in data %}
     <div class='site-detail'>
         <span>{{item.municipalite}}</span>
         <span>{{item.site_name}}</span>
         <span><a target="_blank" href="https://ebird.org/hotspot/{{item.loc_id}}">{{item.loc_id}}</a></span>
     </div>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
     
 </div>
 {% endblock content %}

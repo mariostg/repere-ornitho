@@ -38,6 +38,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "../bootstrap/navbar";
 @import "../bootstrap/nav";
 @import "../bootstrap/buttons";
+@import "../bootstrap/pagination";
 @import "../bootstrap/forms/floating-labels";
 @import "../bootstrap/forms/form-check";
 @import "../bootstrap/forms/form-control";
