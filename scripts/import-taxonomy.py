@@ -7,7 +7,7 @@ csv file must have header that match the model.
 from taxonomy.models import Taxonomy
 import csv
 
-with open("../repere-ornitho-data/taxonomy.csv") as f:
+with open("taxonomy.csv") as f:
     reader = csv.reader(f)
     header = next(reader)  # pass the header
 
