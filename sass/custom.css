@@ -6922,4 +6922,13 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
+#filter-form {
+  max-width: 300px; }
+
+.species > .species_name:nth-child(4n + 1) {
+  background-color: bisque; }
+
+.species > .species_name:nth-child(4n + 3) {
+  background-color: burlywood; }
+
 /*# sourceMappingURL=custom.css.map */

@@ -50,3 +50,15 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "../bootstrap/utilities/api";
 
 // 8. Add additional custom code here
+#filter-form {
+    max-width: 300px;
+}
+
+.species {
+    & > .species_name:nth-child(4n + 1) {
+        background-color: bisque;
+    }
+    & > .species_name:nth-child(4n + 3) {
+        background-color: burlywood;
+    }
+}

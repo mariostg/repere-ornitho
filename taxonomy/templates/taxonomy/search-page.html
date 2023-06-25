@@ -4,7 +4,7 @@
 {% block content %}
 
 <main class="container">
-    <section class="w-75 m-auto py-4" id="filter-form">
+    <section class="m-auto py-4" id="filter-form">
         <form action="{% url 'search-species' %}" method="GET">
             <div class="bg-secondary rounded-top-4 p-2 mt-2">Rechercher espèce </div>
                 <input class='form-control rounded-bottom-4' type="text" name='search_term' value="{{initial.search_term}}">
@@ -26,9 +26,9 @@
         <div class="species">
             {% for item in data %}
             <div class='species_name c3 row'>
-                <span class='col'>{{item.comNameFr}} </span>
-                <span class='col'> {{item.comNameEn}} </span>
-                <span class='col'> {{item.comNameEs}} </span>
+                <span class='col-sm-12 col-md-3'>{{item.comNameFr}} </span>
+                <span class='col-sm-12 col-md-3'> {{item.comNameEn}} </span>
+                <span class='col-sm-12 col-md-3'> {{item.comNameEs}} </span>
             </div>
             <div class="species_detail row bg-secondary-subtle" style='display:none;'>
                 <div class="row">
