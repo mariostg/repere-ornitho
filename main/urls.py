@@ -8,4 +8,5 @@ urlpatterns = [
     path("home/", include("home.urls")),
     path("sites/", include("sites.urls")),
     path("taxonomy/", include("taxonomy.urls")),
+    path("report/", include("ebirdreports.urls")),
 ]

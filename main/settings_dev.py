@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "geographie",
     "taxonomy",
     "sites",
+    "ebirdreports",
 ]
 
 MIDDLEWARE = [

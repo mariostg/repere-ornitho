@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1>Observations des {{back}} derniers jours pour {{municipalite}}</h1>
+</div>
+<div class="container">
+    {% for d in data %}
+    <div class="row">
+        <div class='col'>{{d.howMany}} {{d.comName}}</div>
+        <div class='col'> <a target="_blank" href="https://ebird.org/hotspot/{{d.locId}}">{{d.locName}}</a></div>
+        <div class='col'>{{d.obsDt}}</div>
+        <div class='col'><a target="_blank" href="https://ebird.org/checklist/{{d.subId}}">{{d.subId}}</a></div>
+
+    </div>
+    {% endfor %}
+    {% endblock content %}
+
+</div>
+
+
+{"speciesCode": "rewbla", "comName": "Carouge \u00e0 \u00e9paulettes", "sciName": "Agelaius phoeniceus", "locId": "L1444933", "locName": "Parc de la Gatineau--Relais Plein Air", "obsDt": "2023-06-24 14:37", "howMany": 3, "lat": 45.4619563, "lng": -75.7739375, "obsValid": true, "obsReviewed": false, "locationPrivate": false, "subId": "S142586766"
