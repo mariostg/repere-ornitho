@@ -23,6 +23,13 @@ class Mrc(models.Model):
         verbose_name_plural = "MRC"
         ordering = ("name",)
 
+    def code_is_good(self, code: str):
+        if len(code) == 2:
+            code = f"CA-QC-{code.upper()}"
+        if len(code) != 8:
+            return False
+        return Mrc.objects.filter(code=code)
+
 
 class Municipalite(models.Model):
     name = models.CharField(max_length=75, unique=True, verbose_name="Municipalité")
