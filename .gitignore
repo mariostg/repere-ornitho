@@ -9,3 +9,9 @@ __pycache__
 htmlcov/
 *.json
 *.csv
+
+#MacOs
+.DS_Store
+
+#Sass map files
+*.css.map
