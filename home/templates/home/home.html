@@ -6,9 +6,10 @@
 <main class="container">
     <h2 class='header'>Observations récentes par MRC</h2>
     <p>Affiche le nom de l'espèce, l'endroit et la date à laquelle l'espèce à été observée dans les 7 derniers jours.</p>
-    <nav class="nav">
-        <a class='nav-link' href="{% url 'observation-municipalite' 'ou' 7 %}">Gatineau</a>
-        <a class='nav-link' href="{% url 'observation-municipalite' 'ou' 7 %}">Papineau</a>
+    <nav class="nav flex-column">
+        {% for item in mrc  %}
+        <a class='link-primary' href="{% url 'last-seven-days' item.code%}">{{item.name}}</a>
+        {% endfor %}
     </nav>
 </main>
 {% endblock content %}

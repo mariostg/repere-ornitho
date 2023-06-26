@@ -1,5 +1,8 @@
-from django.views.generic.base import TemplateView
+from django.shortcuts import render
+from geographie.models import Mrc
 
 
-class HomeView(TemplateView):
-    template_name = "home/home.html"
+def home(request):
+    mrc = Mrc.objects.all()
+    context = {"mrc": mrc}
+    return render(request, "home/home.html", context)
