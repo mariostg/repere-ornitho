@@ -27,6 +27,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "../../bootstrap/root";
 
 // 6. Optionally include any other parts as needed
+@import "../../bootstrap/alert";
 @import "../../bootstrap/utilities";
 @import "../../bootstrap/reboot";
 @import "../../bootstrap/type";
