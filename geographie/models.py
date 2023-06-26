@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from datetime import date
 
+
 # Create your models here.
 class Mrc(models.Model):
     name = models.CharField("nom", max_length=75, unique=True)
@@ -28,7 +29,7 @@ class Mrc(models.Model):
             code = f"CA-QC-{code.upper()}"
         if len(code) != 8:
             return False
-        return Mrc.objects.filter(code=code)
+        return Mrc.objects.filter(code=code).first()
 
 
 class Municipalite(models.Model):
