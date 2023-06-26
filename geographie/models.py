@@ -5,6 +5,7 @@ from datetime import date
 # Create your models here.
 class Mrc(models.Model):
     name = models.CharField("nom", max_length=75, unique=True)
+    code = models.CharField("Code de MRC", max_length=8)
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name="Mrc_Creator"
     )
@@ -21,6 +22,13 @@ class Mrc(models.Model):
         verbose_name = "MRC"
         verbose_name_plural = "MRC"
         ordering = ("name",)
+
+    def code_is_good(self, code: str):
+        if len(code) == 2:
+            code = f"CA-QC-{code.upper()}"
+        if len(code) != 8:
+            return False
+        return Mrc.objects.filter(code=code)
 
 
 class Municipalite(models.Model):

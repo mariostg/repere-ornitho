@@ -1,20 +1,20 @@
 {% load static %}
-<header class="site-header">
-    <div class="site-header__logo">
+<header class="container bg-primary text-white">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
       <a href="/">
         <img src="{% static 'images/logo-white.png'%}" alt="Site Logo" />
       </a>
     </div>
-    <div class="site-header--title">
+    <div class="col-sm-12 col-md-6 text-center">
       <h1>Repère ornithologique</h1>
       <h3>Votre binoculaire virtuel</h3>
     </div>
+  </div>
   </header>
 
-  <nav class="site-nav">
-    <div class="block block--spaced">
-      <a class="btn btn--link" href="#">Home</a>
-      <a class="btn btn--link" href="{% url 'search-species'%}">Taxonomie</a>
-      <a class="btn btn--link" href="{% url 'sites-favoris' %}">Sites préférés</a>
-    </div>
+  <nav class="container bg-secondary nav nav-tabs">
+      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="{% url 'search-species'%}">Taxonomie</a>
+      <a class="nav-link" href="{% url 'sites-favoris' %}">Sites préférés</a>
   </nav>

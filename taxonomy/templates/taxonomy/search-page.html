@@ -3,44 +3,46 @@
 
 {% block content %}
 
-<main class="block block--centered">
-    <section class="form" id="filter-form">
+<main class="container">
+    <section class="m-auto py-4" id="filter-form">
         <form action="{% url 'search-species' %}" method="GET">
-            <div class="form__header">Rechercher espèce </div>
-            <section class="form__fields_flex">
-                <div class="form__row">
-                    <div class="form__field">
-                        <input type="text" name='search_term' value="{{initial.search_term}}">
-                    </div>
-                </div>
-            </section>
+            <div class="bg-secondary rounded-top-4 p-2 mt-2">Rechercher espèce </div>
+                <input class='form-control rounded-bottom-4' type="text" name='search_term' value="{{initial.search_term}}">
+            </div>
         </form>
     </section> 
     <section>
-        <p></p>
         {% include 'core/paginator.html' %}
         {% if not data %}
         <div>No lines associated to cost center</div>
         {% endif %}
 
-        <h3 class='header'>Nom d'espèces contenant <u>{{initial.search_term}}</u> </h3>
-        <div class='block block--centered c3'>
-            <span>Nom français </span>
-            <span>Nom anglais</span>
-            <span>Nom espagnol</span>
+        <h3 class='row bg-primary text-secondary justify-content-around'>Nom d'espèces contenant <u>{{initial.search_term}}</u> </h3>
+        <div class='row bg-secondary'>
+            <span class='col'>Nom français </span>
+            <span class='col'>Nom anglais</span>
+            <span class='col'>Nom espagnol</span>
         </div>
         <div class="species">
             {% for item in data %}
-            <div class='species_name c3'>
-                <span>{{item.comNameFr}} </span>
-                <span> {{item.comNameEn}} </span>
-                <span> {{item.comNameEs}} </span>
+            <div class='species_name c3 row'>
+                <span class='col-sm-12 col-md-3'>{{item.comNameFr}} </span>
+                <span class='col-sm-12 col-md-3'> {{item.comNameEn}} </span>
+                <span class='col-sm-12 col-md-3'> {{item.comNameEs}} </span>
             </div>
-            <div class="species_detail">
-                <span>Code d'espèce</span><span> {{item.speciesCode}}</span>
-                <span>ordre</span><span> <a href="{% url 'order' item.order%}">{{item.order}}</a> </span>
-                <span>Nom de famille commun</span><span> {{item.familyComName}}</span>
-                <span>Nom de famille scientifique</span><span> <a href="{% url 'family-sci-name' item.familySciName%}">{{item.familySciName}}</a></span>
+            <div class="species_detail row bg-secondary-subtle" style='display:none;'>
+                <div class="row">
+                    <span class='col'>Code d'espèce</span><span class='col'> {{item.speciesCode}}</span>
+                </div>
+                <div class="row">
+                    <span class='col'>ordre</span><span class='col'> <a href="{% url 'order' item.order%}">{{item.order}}</a> </span>
+                </div>
+                <div class="row">
+                    <span class='col'>Nom de famille commun</span><span class='col'> {{item.familyComName}}</span>
+                </div>
+                <div class="row">
+                    <span class='col'>Nom de famille scientifique</span><span class='col'> <a href="{% url 'family-sci-name' item.familySciName%}">{{item.familySciName}}</a></span>
+                </div>
             </div>
             {% endfor %}
         </div>

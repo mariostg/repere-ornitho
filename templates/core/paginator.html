@@ -1,26 +1,37 @@
 {% if data.paginator.num_pages > 1 %}
-
-<div class="block block--centered">
-    <span class="step-links">
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
         {% if data.has_previous %}
-            <a class='btn' href="?page={{data.previous_page_number}}&{{query_string}}">&laquo; first</a>
-            <a class='btn' href="?page={{data.previous_page_number}}&{{query_string}}">previous</a>
+        <li class="page-item">
+            <a class='page-link' href="?page=1&{{query_string}}">&laquo; Première page</a>
+        </li>
+        <li class="page-item">
+            <a class='page-link' href="?page={{data.previous_page_number}}&{{query_string}}">page précédente</a>
+        </li>
         {% else %}
-            <a class='btn btn-disabled' href="#">&laquo; first</a>
-            <a class='btn btn-disabled' href="#">previous</a>
+        <li class="page-item">
+            <a class='page-link btn-disabled' href="?page=1&{{query_string}}">&laquo; Première page</a>
+        </li>
+        <li class="page-item">
+            <a class='page-link btn-disabled' href="?page={{data.paginator.num_pages}}&{{query_string}}">page précédente</a>
+        </li>
         {% endif %}
 
-        <span class="current">
+        <span class="p-2">
             Page {{ data.number }} of {{ data.paginator.num_pages }}.
         </span>
 
         {% if data.has_next %}
-            <a class='btn' href="?page={{ data.next_page_number }}&{{query_string}}">next</a>
-            <a class='btn' href="?page={{ data.paginator.num_pages }}&{{query_string}}">last &raquo;</a>
+        <li class="page-item">
+            <a class='page-link' href="?page={{ data.next_page_number }}&{{query_string}}">Page suivante</a>
+        </li>
+        <li class="page-item">
+            <a class='page-link' href="?page={{ data.paginator.num_pages }}&{{query_string}}">Dernière page &raquo;</a>
+        </li>
         {% else %}
-            <a class='btn btn-disabled' href="#">next</a>
-            <a class='btn btn-disabled' href="#">last &raquo;</a>
+            <li class="page-item"><a class='page-link btn-disabled' href="?page={{ data.next_page_number }}&{{query_string}}">Page suivante</a></li>
+            <li class="page-item"><a class='page-link btn-disabled' href="?page={{ data.paginator.num_pages }}&{{query_string}}">Dernière page &raquo;</a></li>
         {% endif %}
-    </span>
-</div>
+    </ul>
+</nav>
 {% endif %}
