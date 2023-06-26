@@ -8,13 +8,14 @@
 </main>
 
 <div class="site-list container">
-    {% for m,v in data.items %}
-        <h3 class='bg-secondary-subtle'>{{m}}</h3>
+    {% regroup sites by municipalite as municipalite_list %}
+    {% for municipalite in municipalite_list %}
+        <h3 class='bg-secondary-subtle'>{{municipalite.grouper}}</h3>
 
-        {% for site in v %}
+        {% for site in municipalite.list %}
             <div class='row'>
-                <span class='col'>{{site.0}}</span>
-                <span class='col'><a target="_blank" href="https://ebird.org/hotspot/{{site.1}}">{{site.1}}</a></span>
+                <span class='col'>{{site.site_name}}</span>
+                <span class='col'><a target="_blank" href="https://ebird.org/hotspot/{{site.loc_id}}">{{site.loc_id}}</a></span>
             </div>
         {% endfor %}
     {% endfor %}
