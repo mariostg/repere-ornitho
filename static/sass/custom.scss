@@ -16,9 +16,9 @@ $form: #a5b9d2;
 
 // 4. Include any default map overrides here
 $custom-colors: (
-    "submit": $submit,
-    "delete": $delete,
-    "form": $form,
+  "submit": $submit,
+  "delete": $delete,
+  "form": $form,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 // 5. Include remainder of required parts
@@ -51,14 +51,20 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 8. Add additional custom code here
 #filter-form {
-    max-width: 300px;
+  max-width: 300px;
 }
 
+.odd {
+  background-color: bisque;
+}
+.oven {
+  background-color: burlywood;
+}
 .species {
-    & > .species_name:nth-child(4n + 1) {
-        background-color: bisque;
-    }
-    & > .species_name:nth-child(4n + 3) {
-        background-color: burlywood;
-    }
+  & > .species_name:nth-child(4n + 1) {
+    background-color: bisque;
+  }
+  & > .species_name:nth-child(4n + 3) {
+    background-color: burlywood;
+  }
 }

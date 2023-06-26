@@ -13,7 +13,7 @@ def index(request):
 def observation_municipalite(request, mrc_code, back):
     with open("ca-qc-ou.json", "r") as f:
         data = json.load(f)
-
+    data = sorted(data, key=lambda x: x["comName"])
     # env = environ.Env()
     # environ.Env.read_env()
     # API_KEY = env("API_KEY")

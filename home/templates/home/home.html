@@ -3,8 +3,11 @@
 
 {% block content %}
 
-<main class="block">
-    <h2 class='header'>Sites populaires</h2>
+<main class="container">
+    <h2 class='header'>Observations récentes par MRC</h2>
+    <p>Affiche le nom de l'espèce, l'endroit et la date à laquelle l'espèce à été observée dans les 7 derniers jours.</p>
+
+    <a href="{% url 'observation-municipalite' 'ou' 7 %}">Gatineau</a>
 </main>
 {% endblock content %}
 
