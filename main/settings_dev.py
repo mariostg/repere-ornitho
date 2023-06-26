@@ -152,5 +152,6 @@ LOGGING = {
 
 # Initialise environment variables
 env = environ.Env()
-environ.Env.read_env()
+env_file = BASE_DIR / ".env"
+environ.Env.read_env(env_file)
 API_KEY = env("API_KEY")
