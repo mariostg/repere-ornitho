@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from ebird.api import get_observations
-from main.settings import API_KEY
+from django.contrib import messages
+
+from ebirdreports import reporter
 import json
 
 from geographie.models import Mrc
@@ -10,17 +11,17 @@ def index(request):
     return render(request, "ebirdreports/index.html")
 
 
-def observation_municipalite(request, mrc_code, back):
-    mrc = Mrc()
-    mrc = mrc.code_is_good(mrc_code)
-    if mrc == False:
-        data = []
+def observation_last_seven_days(request, mrc_code: str):
+    data = []
+    mrc_code = mrc_code.upper()
+    mrc_name = Mrc.objects.filter(code=mrc_code).first()
+    if not mrc_name:
+        messages.info(request, f"{mrc_code} non trouvé.")
     else:
-        data = get_observations(API_KEY, mrc.code, back, locale="fr")
-        data = sorted(data, key=lambda x: x["comName"])
-
+        mrc_name = mrc_name.name
+        data = reporter.observation_last_seven_days(mrc_code)
     return render(
         request,
-        "ebirdreports/observation-municipalite.html",
-        {"data": data, "mrc": mrc.name, "back": back},
+        "ebirdreports/observation-last-seven-days.html",
+        {"data": data, "mrc": mrc_name},
     )

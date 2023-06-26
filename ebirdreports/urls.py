@@ -3,5 +3,5 @@ from ebirdreports import views
 
 urlpatterns = [
     path("", views.index, name="report-index"),
-    path("<str:mrc_code>/<int:back>/", views.observation_municipalite, name="observation-municipalite"),
+    path("<str:mrc_code>/", views.observation_last_seven_days, name="last-seven-days"),
 ]
