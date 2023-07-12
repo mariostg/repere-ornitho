@@ -149,6 +149,6 @@ LOGIN_URL = "/guidedessites/users/login/"
 import environ
 
 # Initialise environment variables
-env = environ.Env()
-environ.Env.read_env()
-API_KEY = env("API_KEY")
+# env = environ.Env()
+# environ.Env.read_env()
+# API_KEY = env("API_KEY")
