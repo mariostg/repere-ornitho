@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # "django_extensions",
     "django.forms",
-    # "sass_processor",
+    "sass_processor",
     # apps
     "geographie",
     "home",
