@@ -25,3 +25,12 @@ def observation_last_seven_days(request, mrc_code: str):
         "ebirdreports/observation-last-seven-days.html",
         {"data": data, "mrc": mrc_name},
     )
+
+
+def location_recent_observations(request, location):
+    data = reporter.get_observations_location(location)
+    return render(
+        request,
+        "ebirdreports/observation-last-seven-days.html",
+        {"data": data, "mrc": location},
+    )

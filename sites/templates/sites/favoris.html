@@ -15,6 +15,7 @@
         {% for site in municipalite.list %}
             <div class='row'>
                 <span class='col'>{{site.site_name}}</span>
+                <span class="col"><a target="_blank" href="{% url 'location-recent-observations' site.loc_id %}">visites</a></span>
                 <span class='col'><a target="_blank" href="https://ebird.org/hotspot/{{site.loc_id}}">{{site.loc_id}}</a></span>
             </div>
         {% endfor %}

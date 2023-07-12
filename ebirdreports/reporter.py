@@ -12,3 +12,9 @@ def observation_last_seven_days(mrc_code):
         data = get_observations(API_KEY, mrc.code, 7, locale="fr")
         data = sorted(data, key=lambda x: x["comName"])
     return data
+
+
+def get_observations_location(location):
+    data = get_observations(API_KEY, location, locale="fr")
+    data = sorted(data, key=lambda x: x["comName"])
+    return data

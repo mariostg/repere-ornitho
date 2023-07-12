@@ -1,4 +1,10 @@
 from django.urls import path
-from . import views
+import home.views
+import ebirdreports.views
 
-urlpatterns = [path("", views.home, name="home")]
+# from ebirdreports import views
+
+
+urlpatterns = [
+    path("", home.views.home, name="home"),
+]
