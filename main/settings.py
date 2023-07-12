@@ -26,7 +26,7 @@ SECRET_KEY = "s#z!sa2vl00p=&uy*8oyyj^on)gj$bsvhu8hi3eya*0)y9("
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "www.mariostg.com", "mariostg.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "repere-ornitho.azurewebsites.net"]
 
 # Application definition
 
