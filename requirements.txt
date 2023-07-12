@@ -1,0 +1,12 @@
+asgiref==3.7.2
+Django==4.2.2
+sqlparse==0.4.4
+pandas==2.0.2
+django-environ==0.10.0
+
+##Railway settings
+gunicorn==20.1.0
+dj-database-url==2.0.0
+psycopg2-binary==2.9.6
+whitenoise==6.5.0
+wheel==0.40.0
