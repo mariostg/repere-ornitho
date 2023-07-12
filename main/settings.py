@@ -152,3 +152,4 @@ import environ
 # env = environ.Env()
 # environ.Env.read_env()
 # API_KEY = env("API_KEY")
+API_KEY = "XXX"
